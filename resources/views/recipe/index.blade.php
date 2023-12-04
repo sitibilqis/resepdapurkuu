@@ -37,8 +37,6 @@
             <td>{{ $recipe->title }}</td>
             <td><img src="{{ $recipe->photo }}" class="card-img-top" alt="..."></td>
             <td>{{ $recipe->desc }}</td>
-            <td>{{ $recipe->photo }}</td>
-            <td>{{ $recipe->desc }}</td>
             <td>{{ $recipe->portion }}</td>
             <td>{{ $recipe->est_time }}</td>
             <td>{{ $recipe->ingredients }}</td>

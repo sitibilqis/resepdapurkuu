@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Review;
 use Illuminate\Support\Facades\Session;
 
-class ReviewTableController extends Controller
+class ReviewController extends Controller
 {
     public function index(Request $request) {
         /* menggunakan eloquent */

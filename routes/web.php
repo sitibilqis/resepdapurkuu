@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ReviewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +38,4 @@ Route::post('/article', [ArticleController::class, 'store']);
 Route::get('/delete-article/{id}', [ArticleController::class, 'delete']);
 Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
 
+Route::get('/review', [ArticleController::class, 'index'])->name('review');

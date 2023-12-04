@@ -4,7 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use carbon\Carbon;
+use Carbon\Carbon;
+use App\Models\Review;
 
 class ReviewTableSeeder extends Seeder
 {

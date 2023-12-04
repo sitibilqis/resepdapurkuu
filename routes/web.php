@@ -38,4 +38,4 @@ Route::post('/article', [ArticleController::class, 'store']);
 Route::get('/delete-article/{id}', [ArticleController::class, 'delete']);
 Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
 
-Route::get('/review', [ArticleController::class, 'index'])->name('review');
+Route::get('/review', [ReviewController::class, 'index'])->name('review');

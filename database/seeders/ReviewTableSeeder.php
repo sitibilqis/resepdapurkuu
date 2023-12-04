@@ -30,7 +30,9 @@ class ReviewTableSeeder extends Seeder
                 'rating' => '4',
                 'comment' => 'ada beberapa bahan yang perlu ditambahkan agar lebih pas rasa dari masakan ini',
                 'created_at' => Carbon::now()
-            ]
+            ],
         ];
+        Review::truncate();
+        Review::insert($reviews);
     }
 }

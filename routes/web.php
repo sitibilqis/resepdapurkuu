@@ -29,3 +29,11 @@ Route::middleware([
 });
 
 Route::get('/article', [ArticleController::class, 'index'])->name('article');
+Route::get('/article/{id}', [ArticleController::class, 'detail']);
+Route::get('/edit-article/{id}', [ArticleController::class, 'edit']);
+Route::put('/article/{id}', [ArticleController::class, 'update']);
+Route::get('/add-article', [ArticleController::class, 'new']);
+Route::post('/article', [ArticleController::class, 'store']);
+Route::get('/delete-article/{id}', [ArticleController::class, 'delete']);
+Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
+

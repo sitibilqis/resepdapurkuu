@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('recipe', function (Blueprint $table) {
+            $table->id();
             $table->string('title', 100);
             $table->string('photo');
             $table->text('desc');
@@ -20,6 +21,7 @@ return new class extends Migration
             $table->mediumText('ingredients');
             $table->longText('step');
             $table->string('link');
+            $table->timestamps();
         });
     }
 

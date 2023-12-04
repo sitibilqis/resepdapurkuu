@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\RecipeController;
+use App\Models\Recipe;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,5 @@ Route::get('/delete-article/{id}', [ArticleController::class, 'delete']);
 Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
 
 Route::get('/review', [ReviewController::class, 'index'])->name('review');
+
+Route::get('/recipe', [RecipeController::class, 'index'])->name('recipe');

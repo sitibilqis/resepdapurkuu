@@ -41,6 +41,14 @@ Route::get('/delete-article/{id}', [ArticleController::class, 'delete']);
 Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
 
 Route::get('/review', [ReviewController::class, 'index'])->name('review');
+Route::get('/review/{id}', [ReviewController::class, 'detail']);
+Route::get('/edit-review/{id}', [ReviewController::class, 'edit']);
+Route::put('/review/{id}', [ReviewController::class, 'update']);
+Route::get('/add-review', [ReviewController::class, 'new']);
+Route::post('/review', [ReviewController::class, 'store']);
+Route::get('/delete-review/{id}', [ReviewController::class, 'delete']);
+Route::delete('/review/{id}', [ReviewController::class, 'destroy']);
+
 
 Route::get('/recipe', [RecipeController::class, 'index'])->name('recipe');
 Route::get('/recipe/{id}', [RecipeController::class, 'detail']);

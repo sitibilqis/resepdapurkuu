@@ -43,3 +43,10 @@ Route::delete('/article/{id}', [ArticleController::class, 'destroy']);
 Route::get('/review', [ReviewController::class, 'index'])->name('review');
 
 Route::get('/recipe', [RecipeController::class, 'index'])->name('recipe');
+Route::get('/recipe/{id}', [RecipeController::class, 'detail']);
+Route::get('/edit-recipe/{id}', [RecipeController::class, 'edit']);
+Route::put('/recipe/{id}', [RecipeController::class, 'update']);
+Route::get('/add-recipe', [RecipeController::class, 'new']);
+Route::post('/recipe', [RecipeController::class, 'store']);
+Route::get('/delete-recipe/{id}', [RecipeController::class, 'delete']);
+Route::delete('/recipe/{id}', [RecipeController::class, 'destroy']);

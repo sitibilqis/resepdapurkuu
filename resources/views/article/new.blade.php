@@ -2,7 +2,7 @@
 @section('page_title','Daftar Kategori')
 
 @section('content')
-
+    <h3>Tambah Data Artikel</h3>
     <div class="mt-5 col-12 m-auto">
         <form action="/article" method="post">
             @csrf

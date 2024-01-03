@@ -2,12 +2,14 @@
 @section('page_title','Edit Artikel')
 
 @section('content')
-    <h3>Edit Data Artikel</h3>
     <div class="mt-5 col-12 m-auto">
-        <form action="/article/{{ $articles->id }}" method="post">
+        <form action="/article/{{ $articles->id }}" method="post" enctype="multipart/form-data">
             @csrf
             @method('PUT')
-            <div class="row mb-3">
+            <div class="px-3 pt-3 d-flex align-items-center justify-content-center">
+                <h3>Edit Artikel</h3>
+            </div>
+            <div class="form-group px-3 pt-3 d-flex align-items-center justify-content-center">
                 <div class="col-1">
                     <label for="title" class="col-form-label">Judul</label>
                 </div>
@@ -22,12 +24,12 @@
                     </span>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="form-group px-3 pt-3 d-flex align-items-center justify-content-center">
                 <div class="col-1">
                     <label for="photo" class="col-form-label">Foto</label>
                 </div>
                 <div class="col-8">
-                    <input type="text" id="photo" class="form-control" name="photo" value="{{  old('photo', $articles->photo) }}">
+                    <input type="file" id="photo" class="form-control" name="photo" value="{{  old('photo', $articles->photo) }}">
                 </div>
                 <div class="col-auto">
                     <span id="passwordHelpInLine" class="form-text text-danger">
@@ -37,7 +39,7 @@
                     </span>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="form-group px-3 pt-3 d-flex align-items-center justify-content-center">
                 <div class="col-1">
                     <label for="desc" class="col-form-label">Deskripsi</label>
                 </div>
@@ -52,12 +54,12 @@
                     </span>
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="form-group px-3 pt-3 d-flex align-items-center justify-content-center">
                 <div class="col-1">
                     <label for="content" class="col-form-label">Konten</label>
                 </div>
                 <div class="col-8">
-                    <textarea name="content" id="content" cols="30" rows="10" class="form-control" value="{{  old('content', $articles->content) }}"></textarea>
+                    <textarea name="content" id="content" cols="30" rows="10" class="form-control" value="{{  old('content', $articles->content) }}">{{ $articles->content }}</textarea>
                 </div>
                 <div class="col-auto">
                     <span id="passwordHelpInLine" class="form-text text-danger">
@@ -67,10 +69,10 @@
                     </span>
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-4">
-                        <button type="submit" class="btn btn-success mb-3">Perbarui</button>
-                    <a href="/article" class="btn btn-secondary mb-3">Kembali</a>
+            <div class="mt-5 pb-5">
+                <div class="col d-flex align-items-center justify-content-center">
+                    <button type="submit" class="btn btn-danger btn-login mx-1">Unggah Artikel</button>
+                    <a href="/article" class="btn btn-secondary mx-1">Kembali</a>
                 </div>
             </div>
         </form>

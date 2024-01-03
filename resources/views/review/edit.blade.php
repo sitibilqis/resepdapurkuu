@@ -4,7 +4,7 @@
 @section('content')
     <h3>Edit Data Artikel</h3>
     <div class="mt-5 col-12 m-auto">
-        <form action="/review/{{ $reviewsphp->id }}" method="post">
+        <form action="/review/{{ $reviews->id }}" method="post">
             @csrf
             @method('PUT')
             <div class="row mb-3">

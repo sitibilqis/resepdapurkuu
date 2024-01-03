@@ -11,7 +11,14 @@ class Review extends Model
     protected $table = 'review';
     protected $primaryKey = 'id';
     protected $fillable = [
+        'user_id',
+        'recipe_id',
         'rating',
         'comment',
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

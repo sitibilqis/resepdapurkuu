@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('review', function (Blueprint $table) {
             $table->id();
-            $table->integer('rating');
+            $table->enum('rating', ['1','2','3','4','5']);
             $table->text('comment');
             $table->timestamps();
         });

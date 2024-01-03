@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Review;
+use App\Models\Recipe;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class ReviewController extends Controller
@@ -40,20 +42,30 @@ class ReviewController extends Controller
 
         return redirect('/review'); 
     }
-    public function new()
+    public function new($recipeId)
     {
-        return view('review.new');
+        $reviews = Review::all();
+        return view('review.new', [
+            'recipe_id' => $recipeId,
+            'reviews' => $reviews
+        ]);
     }
 
     public function store(Request $request)
     {
-        $reviews = Review::create($request->all());
+        // dd($request->all());
+        $recipeId = $request->input('recipe_id');
+
+        $reviews = Review::create(array_merge(
+            $request->all(),
+            ['user_id' => Auth::id()]
+        ));
         if ($reviews) {
             Session::flash('status', 'success');
             Session::flash('message', 'Penambahan data berhasil');
         }
 
-        return redirect('/review');
+        return redirect()->route('recipe.show', $recipeId);
     }
     public function delete($id)
     {

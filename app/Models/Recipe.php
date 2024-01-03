@@ -15,9 +15,24 @@ class Recipe extends Model
         'photo',
         'desc',
         'portion',
-        'est_time',
+        'ingr_amount',
+        'ingr_unit',
         'ingredients',
+        'ingr_price',
         'step',
+        'step_img',
+        'est_time',
         'link',
+        'user_id'
     ];
+
+    public function users()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class, 'recipe_id');
+    }
 }
